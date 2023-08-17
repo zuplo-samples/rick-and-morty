@@ -1,0 +1,26 @@
+{
+  "policies": [
+    {
+      "name": "replace-urls",
+      "policyType": "custom-code-outbound",
+      "handler": {
+        "export": "ReplaceStringOutboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "mode": "regexp",
+          "match": "https://rickandmortyapi.com/api/(episode|location|character)",
+          "replaceWith": "https://rickandmorty.zuplo.app/v1/$1s"
+        }
+      }
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/mock)"
+      },
+      "name": "custom-code-inbound",
+      "policyType": "custom-code-inbound"
+    }
+  ],
+  "corsPolicies": []
+}

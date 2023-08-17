@@ -1,0 +1,22 @@
+{
+  "name": "rick-and-morty",
+  "version": "1.0.0",
+  "author": "",
+  "copyright": "",
+  "scripts": {
+    "dev": "zuplo dev",
+    "build": "zuplo build",
+    "test": "zuplo test",
+    "postinstall": "husky install"
+  },
+  "dependencies": {
+    "@zuplo/runtime": "*"
+  },
+  "devDependencies": {
+    "@types/chai": "4.3.4",
+    "@zuplo/core": "*",
+    "@zuplo/test": "*",
+    "chai": "4.3.4",
+    "husky": "^7.0.4"
+  }
+}
