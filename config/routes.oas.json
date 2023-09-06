@@ -474,6 +474,29 @@
           }
         }
       }
+    },
+    "/openapi.json": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "OpenAPI File",
+        "description": "Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do `eiusmod tempor` incididunt ut labore et dolore magna aliqua.",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "openApiSpecHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "openApiFilePath": "./config/routes.oas.json"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "f45b4333-54c1-450d-87f1-b02a6b508ae3"
+      }
     }
   }
 }
