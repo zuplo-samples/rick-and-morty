@@ -37,10 +37,10 @@
         },
         "next": {
           "type": "string",
-          "default": "",
+          "default": null,
           "title": "The next Schema",
           "examples": [
-            "https://rickandmorty.zuplo.io/v1/locations?page=2"
+            null
           ]
         },
         "prev": {
