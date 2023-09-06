@@ -20,7 +20,8 @@
             "required": false,
             "description": "Pagination index",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "example": "1"
             }
           },
           {
@@ -28,7 +29,8 @@
             "in": "query",
             "description": "filter by the given name",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "Rick"
             }
           },
           {
@@ -36,7 +38,8 @@
             "in": "query",
             "description": "filter by the status, one of `dead`, `alive` or `unknown`",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "alive"
             }
           },
           {
@@ -44,7 +47,8 @@
             "in": "query",
             "description": "filter by the species",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "Human"
             }
           },
           {
@@ -52,7 +56,8 @@
             "in": "query",
             "description": "filter by the given type",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": ""
             }
           },
           {
@@ -60,7 +65,8 @@
             "in": "query",
             "description": " filter by the given gender (female, male, genderless or unknown)",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "male"
             }
           }
         ],
@@ -113,7 +119,8 @@
             "in": "path",
             "description": "A single numeric ID or multiple IDs, e.g. `[1,2,3]` or `1,2`",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "1"
             }
           }
         ],
@@ -165,7 +172,8 @@
             "required": false,
             "description": "Pagination index",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "example": 1
             }
           },
           {
@@ -173,7 +181,8 @@
             "in": "query",
             "description": "filter by the given name",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "Earth"
             }
           },
           {
@@ -181,7 +190,8 @@
             "in": "query",
             "description": "filter by the type",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "Planet"
             }
           },
           {
@@ -189,7 +199,8 @@
             "in": "query",
             "description": "filter by the dimension",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "Dimension C-137"
             }
           }
         ],
@@ -292,7 +303,8 @@
             "required": false,
             "description": "Pagination index",
             "schema": {
-              "type": "number"
+              "type": "number",
+              "example": 1
             }
           },
           {
@@ -300,15 +312,8 @@
             "in": "query",
             "description": "filter by the given name",
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "episode",
-            "in": "query",
-            "description": "filter by the given episode code",
-            "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "Pilot"
             }
           }
         ],

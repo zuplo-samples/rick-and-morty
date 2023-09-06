@@ -36,11 +36,10 @@
           ]
         },
         "next": {
-          "type": "string",
-          "default": "",
+          "default": null,
           "title": "The next Schema",
           "examples": [
-            "https://rickandmorty.zuplo.io/v1/locations?page=2"
+            null
           ]
         },
         "prev": {
@@ -56,7 +55,7 @@
         {
           "count": 126,
           "pages": 7,
-          "next": "https://rickandmorty.zuplo.io/v1/locations?page=2",
+          "next": null,
           "prev": null
         }
       ]
@@ -185,7 +184,7 @@
       "info": {
         "count": 126,
         "pages": 7,
-        "next": "https://rickandmorty.zuplo.io/v1/locations?page=2",
+        "next": null,
         "prev": null
       },
       "results": [
