@@ -99,7 +99,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BASE_URL}/character${search}"
+              "rewritePattern": "https://rickandmortyapi.com/api/character${search}"
             }
           }
         }
@@ -151,7 +151,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BASE_URL}/character/${params.characterId}"
+              "rewritePattern": "https://rickandmortyapi.com/api/character/${params.characterId}"
             }
           }
         }
@@ -231,7 +231,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BASE_URL}/location${search}"
+              "rewritePattern": "https://rickandmortyapi.com/api/location${search}"
             }
           }
         }
@@ -282,7 +282,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BASE_URL}/location/${params.locationId}"
+              "rewritePattern": "https://rickandmortyapi.com/api/location/${params.locationId}"
             }
           }
         }
@@ -344,7 +344,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BASE_URL}/episode${search}"
+              "rewritePattern": "https://rickandmortyapi.com/api/episode${search}"
             }
           }
         }
@@ -395,7 +395,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BASE_URL}/episode/${params.episodeId}"
+              "rewritePattern": "https://rickandmortyapi.com/api/episode/${params.episodeId}"
             }
           }
         }
@@ -419,7 +419,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BASE_URL}/character/avatar/${params.imageId}"
+              "rewritePattern": "https://rickandmortyapi.com/api/character/avatar/${params.imageId}"
             }
           }
         }
