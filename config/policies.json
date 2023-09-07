@@ -9,7 +9,7 @@
         "options": {
           "mode": "regexp",
           "match": "https://rickandmortyapi.com/api/(episode|location|character)",
-          "replaceWith": "https://rickandmorty.zuplo.app/v1/$1s"
+          "replaceWith": "https://rickandmorty.zuplo.io/v1/$1s"
         }
       }
     },
