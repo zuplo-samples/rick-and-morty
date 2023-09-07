@@ -481,7 +481,7 @@
       },
       "get": {
         "summary": "OpenAPI File",
-        "description": "Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do `eiusmod tempor` incididunt ut labore et dolore magna aliqua.",
+        "description": "Returns the OpenAPI file of this API.",
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "handler": {
