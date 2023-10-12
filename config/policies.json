@@ -31,18 +31,6 @@
       },
       "name": "api-key-inbound",
       "policyType": "api-key-inbound"
-    },
-    {
-      "handler": {
-        "export": "default",
-        "module": "$import(./modules/hello-world)",
-        "options": {
-          "config1": "YOUR_VALUE",
-          "config2": true
-        }
-      },
-      "name": "custom-code-inbound-1",
-      "policyType": "custom-code-inbound"
     }
   ],
   "corsPolicies": []
