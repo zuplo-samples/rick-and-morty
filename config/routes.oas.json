@@ -89,6 +89,7 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
+              "api-key-inbound",
               "custom-code-inbound"
             ],
             "outbound": [
@@ -142,7 +143,9 @@
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "policies": {
-            "inbound": [],
+            "inbound": [
+              "api-key-inbound"
+            ],
             "outbound": [
               "replace-urls"
             ]
@@ -222,7 +225,9 @@
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "policies": {
-            "inbound": [],
+            "inbound": [
+              "api-key-inbound"
+            ],
             "outbound": [
               "replace-urls"
             ]
@@ -273,7 +278,9 @@
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "policies": {
-            "inbound": [],
+            "inbound": [
+              "api-key-inbound"
+            ],
             "outbound": [
               "replace-urls"
             ]
@@ -335,7 +342,9 @@
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "policies": {
-            "inbound": [],
+            "inbound": [
+              "api-key-inbound"
+            ],
             "outbound": [
               "replace-urls"
             ]
@@ -386,7 +395,9 @@
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "policies": {
-            "inbound": [],
+            "inbound": [
+              "api-key-inbound"
+            ],
             "outbound": [
               "replace-urls"
             ]
@@ -412,7 +423,9 @@
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "policies": {
-            "inbound": [],
+            "inbound": [
+              "api-key-inbound"
+            ],
             "outbound": []
           },
           "handler": {
