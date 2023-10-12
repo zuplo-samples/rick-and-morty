@@ -1,6 +1,15 @@
 {
   "$schema": "https://cdn.zuplo.com/schemas/dev-portal.json",
-  "enableAuthentication": false,
+  "enableAuthentication": true,
   "pageTitle": "Rick and Morty API (by Zuplo) ",
-  "generateExamples": true
+  "generateExamples": true,
+  "authentication": {
+    "provider": "auth0",
+    "authority": "https://zuplo-samples.us.auth0.com/",
+    "jwksUrl": "https://zuplo-samples.us.auth0.com/.well-known/jwks.json",
+    "devPortalClient": {
+      "clientId": "v0cOpST3pX6NIs1VGLVvNjaN3mSBomKk",
+      "audience": "https://api.example.com/"
+    }
+  }
 }
