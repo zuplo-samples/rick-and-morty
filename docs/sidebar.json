@@ -1,14 +1,10 @@
 {
   "docs": [
     {
-      "type": "doc",
-      "id": "index",
-      "label": "About this API",
-      "defaultPage": true
-    },
-    {
       "type": "api-ref",
-      "label": "API Reference"
+      "label": "API Reference",
+            "defaultPage": true
+
     }
   ]
 }

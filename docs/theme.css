@@ -1,7 +1,7 @@
 /* Learn about theming here: https://zuplo.com/docs/developer-portal/theme */
 
 :root {
-  --logo-url: url(https://cdn.zuplo.com/dev-portal/v2/made-with-zuplo.svg);
+  --logo-url: url(https://cdn.zuplo.com/assets/50a9c235-65e3-4a88-8c86-dc023196476f.png);
 }
 
 .light {
