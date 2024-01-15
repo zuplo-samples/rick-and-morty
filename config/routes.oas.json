@@ -2,7 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "The Rick and Morty API (via a Zuplo Gateway)",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "description": "This is an example API proxied via Zuplo - these docs are generated based on the gateway configuration. Full credit to the original and upstream API, which is available at rickandmortyapi.com. \n\n The source for the gateway is available on GitHub [here](https://github.com/zuplo-samples/rick-and-morty). \n\n **Sign In and automatically an API key will be created for you to use the API.**"
   },
   "paths": {
     "/v1/characters": {
@@ -27,6 +28,7 @@
           {
             "name": "name",
             "in": "query",
+            "required": true,
             "description": "filter by the given name",
             "schema": {
               "type": "string",
@@ -36,6 +38,7 @@
           {
             "name": "status",
             "in": "query",
+            "required": false,
             "description": "filter by the status, one of `dead`, `alive` or `unknown`",
             "schema": {
               "type": "string",
@@ -45,6 +48,7 @@
           {
             "name": "species",
             "in": "query",
+            "required": false,
             "description": "filter by the species",
             "schema": {
               "type": "string",
@@ -54,6 +58,7 @@
           {
             "name": "type",
             "in": "query",
+            "required": false,
             "description": "filter by the given type",
             "schema": {
               "type": "string",
@@ -63,6 +68,7 @@
           {
             "name": "gender",
             "in": "query",
+            "required": false,
             "description": " filter by the given gender (female, male, genderless or unknown)",
             "schema": {
               "type": "string",
@@ -90,7 +96,8 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "custom-code-inbound"
+              "custom-code-inbound",
+              "request-validation-inbound"
             ],
             "outbound": [
               "replace-urls"
