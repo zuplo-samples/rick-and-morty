@@ -3,7 +3,7 @@
   "info": {
     "title": "The Rick and Morty API (via a Zuplo Gateway)",
     "version": "1.0.0",
-    "description": "This is an example API proxied via Zuplo - these docs are generated based on the gateway configuration. Full credit to the original and upstream API, which is available at rickandmortyapi.com. \n\n The source for the gateway is available on GitHub [here](https://github.com/zuplo-samples/rick-and-morty). \n\n **Sign In and automatically an API key will be created for you to use the API.**"
+    "description": "This is an example API proxied via Zuplo - these docs are generated based on the gateway configuration. Full credit to the original and upstream API, which is available at rickandmortyapi.com. \n\n The source for the gateway is available on GitHub [here](https://github.com/zuplo-samples/rick-and-morty). \n\n **To use this API: 1) visit the pricing page from the top menu , 2) subscribe to any plan using a [fake credit card](https://docs.stripe.com/testing#cards) like `4242 4242 4242 4242` and any expire date and CVC and 3) copy your API key and start using the API.**"
   },
   "paths": {
     "/v1/characters": {
@@ -96,8 +96,8 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "custom-code-inbound",
-              "request-validation-inbound"
+              "monetization-inbound",
+              "custom-code-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -151,7 +151,8 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound"
+              "api-key-inbound",
+              "monetization-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -233,7 +234,8 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound"
+              "api-key-inbound",
+              "monetization-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -286,7 +288,8 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound"
+              "api-key-inbound",
+              "monetization-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -350,7 +353,8 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound"
+              "api-key-inbound",
+              "monetization-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -403,7 +407,8 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound"
+              "api-key-inbound",
+              "monetization-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -431,7 +436,8 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound"
+              "api-key-inbound",
+              "monetization-inbound"
             ],
             "outbound": []
           },
