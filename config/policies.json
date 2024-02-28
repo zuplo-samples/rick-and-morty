@@ -1,0 +1,71 @@
+{
+  "policies": [
+    {
+      "name": "replace-urls",
+      "policyType": "custom-code-outbound",
+      "handler": {
+        "export": "ReplaceStringOutboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "mode": "regexp",
+          "match": "https://rickandmortyapi.com/api/(episode|location|character)",
+          "replaceWith": "https://rickandmorty.zuplo.io/v1/$1s"
+        }
+      }
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/mock)"
+      },
+      "name": "custom-code-inbound",
+      "policyType": "custom-code-inbound"
+    },
+    {
+      "handler": {
+        "export": "ApiKeyInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false
+        }
+      },
+      "name": "api-key-inbound",
+      "policyType": "api-key-inbound"
+    },
+    {
+      "handler": {
+        "export": "RequestValidationInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "includeRequestInLogs": false,
+          "logLevel": "info",
+          "validateBody": "log-only",
+          "validatePathParameters": "log-only",
+          "validateQueryParameters": "reject-and-log"
+        }
+      },
+      "name": "request-validation-inbound",
+      "policyType": "request-validation-inbound"
+    },
+    {
+      "handler": {
+        "export": "MonetizationInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowRequestsOverQuota": false,
+          "allowedSubscriptionStatuses": [
+            "active",
+            "incomplete"
+          ],
+          "meterOnStatusCodes": "200-399",
+          "meters": {
+            "requests": 1
+          }
+        }
+      },
+      "name": "monetization-inbound",
+      "policyType": "monetization-inbound"
+    }
+  ],
+  "corsPolicies": []
+}

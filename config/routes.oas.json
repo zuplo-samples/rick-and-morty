@@ -1,0 +1,528 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "The Rick and Morty API (via a Zuplo Gateway)",
+    "version": "1.0.0",
+    "description": "This is an example API proxied via Zuplo - these docs are generated based on the gateway configuration. Full credit to the original and upstream API, which is available at rickandmortyapi.com. \n\n The source for the gateway is available on GitHub [here](https://github.com/zuplo-samples/rick-and-morty). \n\n **Sign In and automatically an API key will be created for you to use the API.**"
+  },
+  "paths": {
+    "/v1/characters": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "summary": "Get all characters ",
+        "description": "You can access the list of characters by using the `/characters` endpoint. Pagination is supported via the `?page=2` querystring. You can also filter the results using the `name`, `status`, `species`, `type` and `gender` query parameters.",
+        "operationId": "a079709e-683f-4580-ab6b-59ebcb3508cb",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Pagination index",
+            "schema": {
+              "type": "number",
+              "example": "1"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "description": "filter by the given name",
+            "schema": {
+              "type": "string",
+              "example": "Rick"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "filter by the status, one of `dead`, `alive` or `unknown`",
+            "schema": {
+              "type": "string",
+              "example": "alive"
+            }
+          },
+          {
+            "name": "species",
+            "in": "query",
+            "required": false,
+            "description": "filter by the species",
+            "schema": {
+              "type": "string",
+              "example": "Human"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "filter by the given type",
+            "schema": {
+              "type": "string",
+              "example": ""
+            }
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "required": false,
+            "description": " filter by the given gender (female, male, genderless or unknown)",
+            "schema": {
+              "type": "string",
+              "example": "male"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/all-characters.json"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Characters"
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-inbound",
+              "custom-code-inbound"
+            ],
+            "outbound": [
+              "replace-urls"
+            ]
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/api/character${search}"
+            }
+          }
+        }
+      }
+    },
+    "/v1/characters/:characterId": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "summary": "Get a characters by ID(s)",
+        "description": "You can get a single character by ID, or multiple by adding an array of ids as parameter: `/characters/[1,2,3]` or `/characters/1,2,3`",
+        "operationId": "e6df88e1-c847-43ef-b8d3-aa897dcb6f11",
+        "parameters": [
+          {
+            "name": "characterId",
+            "in": "path",
+            "description": "A single numeric ID or multiple IDs, e.g. `[1,2,3]` or `1,2`",
+            "schema": {
+              "type": "string",
+              "example": "1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/single-character.json"
+                }
+              }
+            },
+            "description": "test"
+          }
+        },
+        "tags": [
+          "Characters"
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-inbound"
+            ],
+            "outbound": [
+              "replace-urls"
+            ]
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/api/character/${params.characterId}"
+            }
+          }
+        }
+      }
+    },
+    "/v1/locations": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "summary": "Get all locations",
+        "description": "You can access the list of locations by using the `/locations` endpoint.",
+        "operationId": "90fc0a35-405e-4713-8094-91117bbf74dd",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Pagination index",
+            "schema": {
+              "type": "number",
+              "example": 1
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "filter by the given name",
+            "schema": {
+              "type": "string",
+              "example": "Earth"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "filter by the type",
+            "schema": {
+              "type": "string",
+              "example": "Planet"
+            }
+          },
+          {
+            "name": "dimension",
+            "in": "query",
+            "description": "filter by the dimension",
+            "schema": {
+              "type": "string",
+              "example": "Dimension C-137"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/all-locations.json"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Locations"
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-inbound"
+            ],
+            "outbound": [
+              "replace-urls"
+            ]
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/api/location${search}"
+            }
+          }
+        }
+      }
+    },
+    "/v1/locations/:locationId": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "summary": "Get locations by ID(s)",
+        "description": "You can get a single location by ID, or multiple by adding an array of ids as parameter: `/locations/[1,2,3]` or `/locations/1,2,3`",
+        "operationId": "9fd9bea1-568e-44a7-8be2-e435d5457207",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "A single numeric ID or multiple IDs, e.g. `[1,2,3]` or `1,2`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/single-location.json"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Locations"
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-inbound"
+            ],
+            "outbound": [
+              "replace-urls"
+            ]
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/api/location/${params.locationId}"
+            }
+          }
+        }
+      }
+    },
+    "/v1/episodes/": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "summary": "Get all episodes",
+        "description": "You can access the list of episodes by using the `/episodes` endpoint.",
+        "operationId": "6aa12d8c-6132-4161-9e7c-acccbc891bfc",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Pagination index",
+            "schema": {
+              "type": "number",
+              "example": 1
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "filter by the given name",
+            "schema": {
+              "type": "string",
+              "example": "Pilot"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/all-episodes.json"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Episodes"
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-inbound"
+            ],
+            "outbound": [
+              "replace-urls"
+            ]
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/api/episode${search}"
+            }
+          }
+        }
+      }
+    },
+    "/v1/episodes/:episodeId": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "summary": "Get episodes by ID(s)",
+        "description": "You can get a single episode by ID, or multiple by adding an array of ids as parameter: `/episodes/[1,2,3]` or `/episodes/1,2,3`",
+        "operationId": "98dd71d5-4217-412a-b873-146b4e8b1c60",
+        "parameters": [
+          {
+            "name": "episodeId",
+            "in": "path",
+            "description": "A single numeric ID or multiple IDs, e.g. `[1,2,3]` or `1,2`",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../schemas/single-episode.json"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Episodes"
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-inbound"
+            ],
+            "outbound": [
+              "replace-urls"
+            ]
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/api/episode/${params.episodeId}"
+            }
+          }
+        }
+      }
+    },
+    "/v1/characters/avatar/:imageId": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "x-internal": true,
+        "summary": "Get Avatar",
+        "operationId": "93377ad1-55e3-4610-88bd-651a163c3395",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-inbound"
+            ],
+            "outbound": []
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/api/character/avatar/${params.imageId}"
+            }
+          }
+        }
+      }
+    },
+    "/favicon.ico": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "x-internal": true,
+        "summary": "favicon",
+        "description": "Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do `eiusmod tempor` incididunt ut labore et dolore magna aliqua.",
+        "operationId": "d76634dd-bd55-4897-b500-44e6d700be30",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "policies": {
+            "inbound": [],
+            "outbound": []
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/favicon-32x32.png"
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "x-internal": true,
+        "summary": "Root redirect",
+        "operationId": "c3cd546b-c521-4700-bd37-1622c57158c0",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "policies": {
+            "inbound": [],
+            "outbound": []
+          },
+          "handler": {
+            "export": "redirectHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "location": "/docs",
+              "status": 301
+            }
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "OpenAPI File",
+        "description": "Returns the OpenAPI file of this API.",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "openApiSpecHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "openApiFilePath": "./config/routes.oas.json"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "f45b4333-54c1-450d-87f1-b02a6b508ae3"
+      }
+    }
+  }
+}

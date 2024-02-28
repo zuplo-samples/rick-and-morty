@@ -1,0 +1,206 @@
+{
+  "$id": "http://example.com/all-episodes.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "info",
+    "results"
+  ],
+  "properties": {
+    "info": {
+      "type": "object",
+      "default": {},
+      "title": "The info Schema",
+      "required": [
+        "count",
+        "pages",
+        "next",
+        "prev"
+      ],
+      "properties": {
+        "count": {
+          "type": "integer",
+          "default": 0,
+          "title": "The count Schema",
+          "examples": [
+            51
+          ]
+        },
+        "pages": {
+          "type": "integer",
+          "default": 0,
+          "title": "The pages Schema",
+          "examples": [
+            3
+          ]
+        },
+        "next": {
+          "default": null,
+          "title": "The next Schema",
+          "examples": [
+            null
+          ]
+        },
+        "prev": {
+          "type": "null",
+          "default": null,
+          "title": "The prev Schema",
+          "examples": [
+            null
+          ]
+        }
+      },
+      "examples": [
+        {
+          "count": 51,
+          "pages": 3,
+          "next": "https://rickandmorty.zuplo.io/v1/episodes?page=2",
+          "prev": null
+        }
+      ]
+    },
+    "results": {
+      "type": "array",
+      "default": [],
+      "title": "The results Schema",
+      "items": {
+        "type": "object",
+        "default": {},
+        "title": "A Schema",
+        "required": [
+          "id",
+          "name",
+          "air_date",
+          "episode",
+          "characters",
+          "url",
+          "created"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "default": 0,
+            "title": "The id Schema",
+            "examples": [
+              1
+            ]
+          },
+          "name": {
+            "type": "string",
+            "default": "",
+            "title": "The name Schema",
+            "examples": [
+              "Pilot"
+            ]
+          },
+          "air_date": {
+            "type": "string",
+            "default": "",
+            "title": "The air_date Schema",
+            "examples": [
+              "December 2, 2013"
+            ]
+          },
+          "episode": {
+            "type": "string",
+            "default": "",
+            "title": "The episode Schema",
+            "examples": [
+              "S01E01"
+            ]
+          },
+          "characters": {
+            "type": "array",
+            "default": [],
+            "title": "The characters Schema",
+            "items": {
+              "type": "string",
+              "title": "A Schema",
+              "examples": [
+                "https://rickandmorty.zuplo.io/v1/characters/1",
+                "https://rickandmorty.zuplo.io/v1/characters/2"
+              ]
+            },
+            "examples": [
+              [
+                "https://rickandmorty.zuplo.io/v1/characters/1",
+                "https://rickandmorty.zuplo.io/v1/characters/2"
+              ]
+            ]
+          },
+          "url": {
+            "type": "string",
+            "default": "",
+            "title": "The url Schema",
+            "examples": [
+              "https://rickandmorty.zuplo.io/v1/episodes/1"
+            ]
+          },
+          "created": {
+            "type": "string",
+            "default": "",
+            "title": "The created Schema",
+            "examples": [
+              "2017-11-10T12:56:33.798Z"
+            ]
+          }
+        },
+        "examples": [
+          {
+            "id": 1,
+            "name": "Pilot",
+            "air_date": "December 2, 2013",
+            "episode": "S01E01",
+            "characters": [
+              "https://rickandmorty.zuplo.io/v1/characters/1",
+              "https://rickandmorty.zuplo.io/v1/characters/2"
+            ],
+            "url": "https://rickandmorty.zuplo.io/v1/episodes/1",
+            "created": "2017-11-10T12:56:33.798Z"
+          }
+        ]
+      },
+      "examples": [
+        [
+          {
+            "id": 1,
+            "name": "Pilot",
+            "air_date": "December 2, 2013",
+            "episode": "S01E01",
+            "characters": [
+              "https://rickandmorty.zuplo.io/v1/characters/1",
+              "https://rickandmorty.zuplo.io/v1/characters/2"
+            ],
+            "url": "https://rickandmorty.zuplo.io/v1/episodes/1",
+            "created": "2017-11-10T12:56:33.798Z"
+          }
+        ]
+      ]
+    }
+  },
+  "examples": [
+    {
+      "info": {
+        "count": 51,
+        "pages": 3,
+        "next": "https://rickandmorty.zuplo.io/v1/episodes?page=2",
+        "prev": null
+      },
+      "results": [
+        {
+          "id": 1,
+          "name": "Pilot",
+          "air_date": "December 2, 2013",
+          "episode": "S01E01",
+          "characters": [
+            "https://rickandmorty.zuplo.io/v1/characters/1",
+            "https://rickandmorty.zuplo.io/v1/characters/2"
+          ],
+          "url": "https://rickandmorty.zuplo.io/v1/episodes/1",
+          "created": "2017-11-10T12:56:33.798Z"
+        }
+      ]
+    }
+  ]
+}

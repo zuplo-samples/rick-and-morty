@@ -1,0 +1,16 @@
+{
+  "$schema": "https://cdn.zuplo.com/schemas/dev-portal.json",
+  "enableAuthentication": true,
+  "pageTitle": "Rick and Morty API (by Zuplo) ",
+  "generateExamples": true,
+  "enabled": true,
+  "faviconUrl": "https://cdn.zuplo.com/assets/50a9c235-65e3-4a88-8c86-dc023196476f.png",
+  "requireAuthentication": false,
+  "enableMonetization": true,
+  "monetization": {
+    "provider": "stripe",
+    "publishableKey": "pk_test_51OmbI2B5gtR2kZJYOmh8UHgM6M3YvwaeC1Mug2CZtahTHuMnaCcKQkGfLCssdMNKLker16e5D4Gk4Rnc4qPAnKm4006ZXglmOG",
+    "pricingTableId": "prctbl_1OmbhLB5gtR2kZJYHsvk8G1t",
+    "secretKey": "$env(STRIPE_SECRET_KEY)"
+  }
+}

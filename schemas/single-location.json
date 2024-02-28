@@ -1,0 +1,98 @@
+{
+  "$id": "http://example.com/single-location.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "id",
+    "name",
+    "type",
+    "dimension",
+    "residents",
+    "url",
+    "created"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "default": 0,
+      "title": "The id Schema",
+      "examples": [
+        3
+      ]
+    },
+    "name": {
+      "type": "string",
+      "default": "",
+      "title": "The name Schema",
+      "examples": [
+        "Citadel of Ricks"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "default": "",
+      "title": "The type Schema",
+      "examples": [
+        "Space station"
+      ]
+    },
+    "dimension": {
+      "type": "string",
+      "default": "",
+      "title": "The dimension Schema",
+      "examples": [
+        "unknown"
+      ]
+    },
+    "residents": {
+      "type": "array",
+      "default": [],
+      "title": "The residents Schema",
+      "items": {
+        "type": "string",
+        "title": "A Schema",
+        "examples": [
+          "https://rickandmorty.zuplo.io/v1/characters/8",
+          "https://rickandmorty.zuplo.io/v1/characters/14"
+        ]
+      },
+      "examples": [
+        [
+          "https://rickandmorty.zuplo.io/v1/characters/8",
+          "https://rickandmorty.zuplo.io/v1/characters/14"
+        ]
+      ]
+    },
+    "url": {
+      "type": "string",
+      "default": "",
+      "title": "The url Schema",
+      "examples": [
+        "https://rickandmorty.zuplo.io/locations/3"
+      ]
+    },
+    "created": {
+      "type": "string",
+      "default": "",
+      "title": "The created Schema",
+      "examples": [
+        "2017-11-10T13:08:13.191Z"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": 3,
+      "name": "Citadel of Ricks",
+      "type": "Space station",
+      "dimension": "unknown",
+      "residents": [
+        "https://rickandmorty.zuplo.io/v1/characters/8",
+        "https://rickandmorty.zuplo.io/v1/characters/14"
+      ],
+      "url": "https://rickandmorty.zuplo.io/locations/3",
+      "created": "2017-11-10T13:08:13.191Z"
+    }
+  ]
+}
