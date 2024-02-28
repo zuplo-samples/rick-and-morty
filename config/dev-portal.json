@@ -12,5 +12,14 @@
     "publishableKey": "pk_test_51Oo7OgCeBM4yIm9KSANdHoXYcR7DHsCatsB9vAbnaQoskJo1aWA2zELJ7c7a3jEPG2lhFoxUdxCCiF8pdJLlhU1g00tH5Zy2hp",
     "pricingTableId": "prctbl_1Oouu4CeBM4yIm9K9lNtl0lA",
     "secretKey": "$env(STRIPE_SECRET_KEY)"
+  },
+  "authentication": {
+    "provider": "auth0",
+    "authority": "https://zuplo-samples.us.auth0.com/",
+    "jwksUrl": "https://zuplo-samples.us.auth0.com/.well-known/jwks.json",
+    "devPortalClient": {
+      "clientId": "v0cOpST3pX6NIs1VGLVvNjaN3mSBomKk",
+      "audience": "https://api.example.com/"
+    }
   }
 }
