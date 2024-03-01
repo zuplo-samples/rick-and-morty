@@ -1,9 +1,10 @@
 import {
   RuntimeExtensions,
   StripeMonetizationPlugin,
+  GoogleCloudLoggingPlugin,
   environment,
 } from "@zuplo/runtime";
- 
+
 export function runtimeInit(runtime: RuntimeExtensions) {
   // Create the Stripe Plugin
   const stripe = new StripeMonetizationPlugin({
@@ -14,4 +15,11 @@ export function runtimeInit(runtime: RuntimeExtensions) {
   });
   // Register the plugin
   runtime.addPlugin(stripe);
+
+  runtime.addPlugin(
+    new GoogleCloudLoggingPlugin({
+      logName: "projects/zuplo-marketing/logs/rick-and-morty",
+      serviceAccountJson: environment.GCP_SERVICE_ACCOUNT,
+    }),
+  );
 }
