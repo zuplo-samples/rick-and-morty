@@ -3,8 +3,7 @@
     {
       "type": "api-ref",
       "label": "API Reference",
-            "defaultPage": true
-
+      "defaultPage": true
     }
   ]
 }
