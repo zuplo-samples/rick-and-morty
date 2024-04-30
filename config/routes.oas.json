@@ -457,7 +457,7 @@
       },
       "get": {
         "x-internal": true,
-        "summary": "favicon",
+        "summary": "Favicon",
         "description": "Lorem ipsum dolor sit amet, **consectetur adipiscing** elit, sed do `eiusmod tempor` incididunt ut labore et dolore magna aliqua.",
         "operationId": "d76634dd-bd55-4897-b500-44e6d700be30",
         "x-zuplo-route": {
