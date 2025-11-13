@@ -4,10 +4,14 @@
   "author": "",
   "copyright": "",
   "scripts": {
-    "dev": "zup dev"
+    "dev": "zup dev",
+    "docs": "npm run dev --workspace docs"
   },
   "dependencies": {
     "zuplo": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "workspaces": [
+    "docs"
+  ]
 }
