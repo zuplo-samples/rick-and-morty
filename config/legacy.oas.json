@@ -1,0 +1,32 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Dev Portal Redirect"
+    },
+    "paths": {
+      "/docs(.*)": {
+        "x-zuplo-path": {
+          "pathMode": "url-pattern"
+        },
+        "get": {
+          "summary": "Redirect",
+          "description": "Redirect to the new Dev Portal domain",
+          "x-zuplo-route": {
+            "corsPolicy": "none",
+            "handler": {
+              "export": "legacyDevPortalHandler",
+              "module": "$import(@zuplo/runtime)",
+              "options": {
+                "mode": "redirect"
+              }
+            },
+            "policies": {
+              "inbound": []
+            }
+          },
+          "operationId": "dev-portal-redirect"
+        }
+      }
+    }
+  }
