@@ -1,0 +1,43 @@
+---
+description: Zudoku developer portal configuration and conventions
+globs: docs/**
+alwaysApply: false
+---
+
+# Zudoku Developer Portal
+
+The `docs/` directory is a separate workspace containing the Zudoku-powered developer portal.
+
+## Key Architecture
+
+- The dev portal runs on its **own dedicated domain**, separate from the API domain.
+- It does NOT live under `/docs` on the API domain. The API uses `legacyDevPortalHandler` in `config/legacy.oas.json` to redirect `/docs(.*)` URLs to the portal's domain. The root `/` route uses `redirectHandler` to `/docs` first (since `legacyDevPortalHandler` cannot be used on the root path).
+- API reference is generated from `config/routes.oas.json` via the `apis` config.
+
+## Configuration (`docs/zudoku.config.tsx`)
+
+- `site` - Logo, title, branding
+- `metadata` - Favicon, page title
+- `navigation` - Top-level nav items. Types: `"doc"` (markdown page), `"link"` (URL), `"category"` (group)
+- `apis` - API reference sources. Uses `type: "file"` pointing to `../config/routes.oas.json`
+- `authentication` - Auth0 config for user login
+- `redirects` - Client-side redirects within the portal (e.g., `{ from: "/", to: "/introduction" }`)
+
+## Markdown Pages
+
+Documentation pages live in `docs/pages/` as `.md` files with frontmatter:
+
+```markdown
+---
+title: Page Title
+sidebar_label: Short Label
+description: SEO description
+---
+```
+
+Reference them in navigation by filename (without extension).
+
+## Commands
+
+- `npm run docs` (from root) or `npm run dev` (from `docs/`) - Start dev server
+- `npm run build` (from `docs/`) - Build for production

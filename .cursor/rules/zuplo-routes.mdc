@@ -1,0 +1,45 @@
+---
+description: Zuplo route and policy configuration conventions
+globs: config/*.json
+alwaysApply: false
+---
+
+# Zuplo Route & Policy Configuration
+
+## Route Files (`config/*.oas.json`)
+
+Route files are OpenAPI 3.1 documents extended with Zuplo-specific fields.
+
+### Route Structure
+
+Each path entry has:
+- `x-zuplo-path.pathMode` - Either `"url-pattern"` (supports `:param` and regex) or `"open-api"` (standard OpenAPI paths)
+- `x-zuplo-route.handler` - The request handler with `export`, `module`, and `options`
+- `x-zuplo-route.policies` - Named inbound/outbound policies from `policies.json`
+- `x-zuplo-route.corsPolicy` - CORS policy name (`"anything-goes"` or `"none"`)
+
+### Common Handlers
+
+| Handler | Module | Purpose |
+|---------|--------|---------|
+| `urlRewriteHandler` | `@zuplo/runtime` | Proxy requests to an upstream URL. Uses `${params.name}` and `${search}` in `rewritePattern`. |
+| `redirectHandler` | `@zuplo/runtime` | Send HTTP redirect. Options: `location` (URL), `status` (301/302). |
+| `legacyDevPortalHandler` | `@zuplo/runtime` | Redirect to the Zudoku dev portal domain. Options: `mode` (`"redirect"`). **Cannot be used on root `/` path** — requires a `/docs` base path. |
+| `openApiSpecHandler` | `@zuplo/runtime` | Serve the OpenAPI spec. Options: `openApiFilePath`. |
+
+### Internal Routes
+
+Set `"x-internal": true` on operations that should be hidden from the public API reference (e.g., favicon, avatar proxy, redirects).
+
+## Policies (`config/policies.json`)
+
+Policies are defined in a top-level `policies` array. Each entry has:
+- `name` - Referenced by routes
+- `policyType` - e.g., `"api-key-inbound"`, `"custom-code-outbound"`, `"custom-code-inbound"`
+- `handler` - Module and export, with options
+
+### This Project's Policies
+
+- `api-key-inbound` - Requires API key authentication
+- `replace-urls` - Outbound policy that rewrites upstream URLs in responses to point to this gateway
+- `custom-code-inbound` - Custom logging policy from `modules/mock.ts`
