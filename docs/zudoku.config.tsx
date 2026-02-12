@@ -3,6 +3,7 @@
 // You can edit this file to customize the dev portal.
 // For more information, see https://zuplo.com/docs/dev-portal/zudoku/configuration/overview
 import type { ZudokuConfig } from "zudoku";
+import { zuploMonetizationPlugin } from "@zuplo/zudoku-plugin-monetization";
 
 const config: ZudokuConfig = {
   site: {
@@ -47,5 +48,8 @@ const config: ZudokuConfig = {
     domain: "zuplo-samples.us.auth0.com",
     audience: "https://api.example.com/",
   },
+  plugins: [
+    zuploMonetizationPlugin(),
+  ]
 };
 export default config;
