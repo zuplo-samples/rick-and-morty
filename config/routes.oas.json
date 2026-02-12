@@ -96,7 +96,7 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound",
+              "monetization-v3",
               "custom-code-inbound"
             ],
             "outbound": [
@@ -152,7 +152,7 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound"
+              "monetization-v3"
             ],
             "outbound": [
               "replace-urls"
@@ -235,7 +235,7 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound"
+              "monetization-v3"
             ],
             "outbound": [
               "replace-urls"
@@ -289,7 +289,7 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound"
+              "monetization-v3"
             ],
             "outbound": [
               "replace-urls"
@@ -354,7 +354,7 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound"
+              "monetization-v3"
             ],
             "outbound": [
               "replace-urls"
@@ -408,7 +408,7 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound"
+              "monetization-v3"
             ],
             "outbound": [
               "replace-urls"
@@ -437,7 +437,7 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound"
+              "monetization-v3"
             ],
             "outbound": []
           },
