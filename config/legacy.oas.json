@@ -2,53 +2,30 @@
     "openapi": "3.1.0",
     "info": {
       "version": "1.0.0",
-      "title": "Dev Portal Redirect"
+      "title": "Dev Portal Proxy"
     },
     "paths": {
-      "/": {
-        "x-zuplo-path": {
-          "pathMode": "url-pattern"
-        },
-        "get": {
-          "summary": "Root Redirect",
-          "description": "Redirect root to the Dev Portal",
-          "x-zuplo-route": {
-            "corsPolicy": "none",
-            "handler": {
-              "export": "legacyDevPortalHandler",
-              "module": "$import(@zuplo/runtime)",
-              "options": {
-                "mode": "redirect"
-              }
-            },
-            "policies": {
-              "inbound": []
-            }
-          },
-          "operationId": "root-redirect"
-        }
-      },
       "/docs(.*)": {
         "x-zuplo-path": {
           "pathMode": "url-pattern"
         },
         "get": {
-          "summary": "Redirect",
-          "description": "Redirect to the new Dev Portal domain",
+          "summary": "Dev Portal",
+          "description": "Proxy the Zudoku dev portal on the same domain",
           "x-zuplo-route": {
             "corsPolicy": "none",
             "handler": {
               "export": "legacyDevPortalHandler",
               "module": "$import(@zuplo/runtime)",
               "options": {
-                "mode": "redirect"
+                "mode": "proxy"
               }
             },
             "policies": {
               "inbound": []
             }
           },
-          "operationId": "dev-portal-redirect"
+          "operationId": "dev-portal-proxy"
         }
       }
     }

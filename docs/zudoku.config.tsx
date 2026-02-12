@@ -5,6 +5,7 @@
 import type { ZudokuConfig } from "zudoku";
 
 const config: ZudokuConfig = {
+  basePath: "/docs",
   site: {
     logo: {
       src: {
