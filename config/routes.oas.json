@@ -495,9 +495,6 @@
       }
     },
     "/openapi.json": {
-      "x-zuplo-path": {
-        "pathMode": "open-api"
-      },
       "get": {
         "summary": "OpenAPI File",
         "description": "Returns the OpenAPI file of this API.",
