@@ -96,7 +96,6 @@
           "policies": {
             "inbound": [
               "api-key-inbound",
-              "monetization-inbound",
               "custom-code-inbound"
             ],
             "outbound": [
@@ -151,8 +150,7 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound",
-              "monetization-inbound"
+              "api-key-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -234,8 +232,7 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound",
-              "monetization-inbound"
+              "api-key-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -288,8 +285,7 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound",
-              "monetization-inbound"
+              "api-key-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -353,8 +349,7 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound",
-              "monetization-inbound"
+              "api-key-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -407,8 +402,7 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound",
-              "monetization-inbound"
+              "api-key-inbound"
             ],
             "outbound": [
               "replace-urls"
@@ -436,8 +430,7 @@
           "corsPolicy": "anything-goes",
           "policies": {
             "inbound": [
-              "api-key-inbound",
-              "monetization-inbound"
+              "api-key-inbound"
             ],
             "outbound": []
           },
