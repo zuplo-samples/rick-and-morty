@@ -1,6 +1,5 @@
 import type { ZudokuConfig } from "zudoku";
 import { zuploMonetizationPlugin } from "@zuplo/zudoku-plugin-monetization";
-import LandingPage from "./src/LandingPage.js";
 import PickleExplosion from "./src/PickleExplosion.js";
 
 const config: ZudokuConfig = {
@@ -48,7 +47,7 @@ const config: ZudokuConfig = {
         {
           title: "Documentation",
           links: [
-            { label: "Home", href: "/" },
+            { label: "Home", href: "/docs" },
             { label: "Getting Started", href: "/getting-started" },
             { label: "Characters", href: "/characters" },
             { label: "Locations", href: "/locations" },
@@ -97,11 +96,6 @@ const config: ZudokuConfig = {
     title: "Rick and Morty API (by Zuplo)",
   },
   navigation: [
-    {
-      type: "custom-page",
-      path: "/",
-      element: <LandingPage />,
-    },
     {
       type: "category",
       label: "Documentation",
