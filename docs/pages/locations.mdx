@@ -1,0 +1,103 @@
+---
+title: Locations & Dimensions
+sidebar_label: Locations & Dimensions
+description: Guide to the Locations endpoint — multiverse locations, dimensions, filtering, and examples
+---
+
+The Rick and Morty universe spans an infinite multiverse. The Locations endpoint lets you explore planets, space stations, dimensions, and micro-verses — each with its own residents and dimension classification.
+
+## Data model
+
+Each location object contains the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | integer | Unique identifier |
+| `name` | string | Location name |
+| `type` | string | Type of location (e.g., `Planet`, `Space station`, `Microverse`) |
+| `dimension` | string | The dimension the location belongs to (e.g., `Dimension C-137`) |
+| `residents` | array | List of character URLs for residents of this location |
+| `url` | string | URL to the location's own endpoint |
+| `created` | string | ISO 8601 timestamp when the record was created |
+
+## The multiverse
+
+In Rick and Morty, every possible reality exists somewhere. Dimensions are identified by codes like `C-137` (Rick's home dimension) or `Replacement Dimension` (where they bury their own dead bodies in the backyard — it's a long story).
+
+Some locations exist across multiple dimensions, while others — like the Citadel of Ricks — exist outside any single dimension entirely.
+
+## Get all locations
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/locations"
+```
+
+Returns a paginated list of all locations (20 per page).
+
+## Get a single location
+
+```bash
+# Get the Citadel of Ricks
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/locations/3"
+```
+
+## Get multiple locations
+
+```bash
+# Get Earth (C-137), Abadango, and the Citadel
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/locations/1,2,3"
+```
+
+## Filtering
+
+Filter locations using query parameters:
+
+| Parameter | Type | Example Values |
+|-----------|------|---------------|
+| `name` | string | `earth`, `citadel`, `anatomy park` |
+| `type` | string | `planet`, `space station`, `microverse` |
+| `dimension` | string | `dimension c-137`, `unknown`, `replacement dimension` |
+
+### Filter examples
+
+```bash
+# Find all planets
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/locations?type=planet"
+```
+
+```bash
+# Find locations in Dimension C-137
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/locations?dimension=dimension+c-137"
+```
+
+```bash
+# Search for a location by name
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/locations?name=citadel"
+```
+
+## Notable locations
+
+| ID | Name | Type | Dimension |
+|----|------|------|-----------|
+| 1 | Earth (C-137) | Planet | Dimension C-137 |
+| 3 | Citadel of Ricks | Space station | unknown |
+| 6 | Earth (Replacement Dimension) | Planet | Replacement Dimension |
+| 20 | Earth (5-126) | Planet | Dimension 5-126 |
+| 64 | Anatomy Park | Microverse | Dimension C-137 |
+| 11 | Bepis 9 | Planet | unknown |
+
+<Callout type="info">
+The `residents` array in each location response contains URLs to the characters that live there. You can use these to discover characters associated with any location.
+</Callout>
+
+## Next steps
+
+- [Characters Guide](/docs/characters) — explore the residents of these locations
+- [Episodes Guide](/docs/episodes) — find episodes set in specific locations
+- [API Reference](/docs/api) — try the Locations endpoints interactively

@@ -1,0 +1,108 @@
+---
+title: Characters
+sidebar_label: Characters
+description: Guide to the Characters endpoint — data model, filtering, and examples
+---
+
+The Characters endpoint gives you access to every character in the Rick and Morty universe — all 826+ of them. From the genius-level alcoholic scientist Rick Sanchez to the interdimensional cable TV hosts, they're all here.
+
+## Data model
+
+Each character object contains the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | integer | Unique identifier |
+| `name` | string | Character name |
+| `status` | string | `Alive`, `Dead`, or `unknown` |
+| `species` | string | Species (e.g., `Human`, `Alien`, `Robot`) |
+| `type` | string | Sub-type or subspecies (can be empty) |
+| `gender` | string | `Female`, `Male`, `Genderless`, or `unknown` |
+| `origin` | object | `{ name, url }` — the character's origin location |
+| `location` | object | `{ name, url }` — the character's last known location |
+| `image` | string | URL to the character's image (300x300px) |
+| `episode` | array | List of episode URLs the character appears in |
+| `url` | string | URL to the character's own endpoint |
+| `created` | string | ISO 8601 timestamp when the record was created |
+
+## Get all characters
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/characters"
+```
+
+Returns a paginated list of all characters (20 per page).
+
+## Get a single character
+
+```bash
+# Get Rick Sanchez
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/characters/1"
+```
+
+## Get multiple characters
+
+Request multiple characters by ID in a single call:
+
+```bash
+# Get Rick, Morty, and Summer
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/characters/1,2,3"
+```
+
+## Filtering
+
+Filter characters using query parameters. All filters are case-insensitive and use partial matching for string fields.
+
+| Parameter | Type | Example Values |
+|-----------|------|---------------|
+| `name` | string | `rick`, `morty`, `pickle` |
+| `status` | string | `alive`, `dead`, `unknown` |
+| `species` | string | `human`, `alien`, `robot` |
+| `type` | string | `parasite`, `robot` |
+| `gender` | string | `female`, `male`, `genderless`, `unknown` |
+
+### Filter examples
+
+```bash
+# Find all alive humans named "Rick"
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/characters?name=rick&status=alive&species=human"
+```
+
+```bash
+# Find all dead characters
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/characters?status=dead"
+```
+
+```bash
+# Find all Pickle-type characters (you know which one)
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/characters?name=pickle"
+```
+
+<Callout type="tip">
+Combine multiple filters to narrow your search. The API returns all characters that match **all** provided filters.
+</Callout>
+
+## Notable characters
+
+Here are some fan favorites to get you started:
+
+| ID | Name | Species | Status |
+|----|------|---------|--------|
+| 1 | Rick Sanchez | Human | Alive |
+| 2 | Morty Smith | Human | Alive |
+| 3 | Summer Smith | Human | Alive |
+| 118 | Evil Morty | Human | Alive |
+| 265 | Pickle Rick | Alien | Alive |
+| 244 | Mr. Poopybutthole | Unknown | Alive |
+
+## Next steps
+
+- [Locations Guide](/docs/locations) — where do these characters live?
+- [Episodes Guide](/docs/episodes) — which episodes do they appear in?
+- [API Reference](/docs/api) — try the Characters endpoints interactively

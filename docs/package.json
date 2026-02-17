@@ -9,9 +9,9 @@
     "start": "zudoku start"
   },
   "dependencies": {
-    "zudoku": "0.61.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zudoku": "0.61.2"
   },
   "devDependencies": {
     "@types/node": "^22",

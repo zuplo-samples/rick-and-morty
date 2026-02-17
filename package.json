@@ -10,7 +10,6 @@
   "dependencies": {
     "zuplo": "latest"
   },
-  "devDependencies": {},
   "workspaces": [
     "docs"
   ]
