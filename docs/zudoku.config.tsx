@@ -163,7 +163,12 @@ const config: ZudokuConfig = {
     audience: "https://api.example.com/",
   },
   plugins: [
-    zuploMonetizationPlugin(),
+    zuploMonetizationPlugin({
+      pricing: {
+        title: "Wubba Lubba Pricing Plans",
+        subtitle: "Every dimension has its price. Choose the reality that fits your budget.",
+      },
+    }),
   ],
   slots: {
     "content-after": PickleExplosion,
