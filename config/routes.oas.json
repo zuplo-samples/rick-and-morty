@@ -469,6 +469,31 @@
         }
       }
     },
+    "/": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "get": {
+        "x-internal": true,
+        "summary": "Root redirect",
+        "operationId": "c3cd546b-c521-4700-bd37-1622c57158c0",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "policies": {
+            "inbound": [],
+            "outbound": []
+          },
+          "handler": {
+            "export": "redirectHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "location": "/docs",
+              "status": 301
+            }
+          }
+        }
+      }
+    },
     "/openapi.json": {
       "get": {
         "summary": "OpenAPI File",
