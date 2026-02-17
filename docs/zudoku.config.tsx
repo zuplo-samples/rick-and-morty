@@ -90,11 +90,6 @@ const config: ZudokuConfig = {
           href: "https://github.com/zuplo-samples/rick-and-morty",
           label: "GitHub",
         },
-        {
-          icon: "discord",
-          href: "https://discord.gg/zuplo",
-          label: "Discord",
-        },
       ],
       copyright: `© ${new Date().getFullYear()} Zuplo, Inc. Rick and Morty data from rickandmortyapi.com.`,
     },
