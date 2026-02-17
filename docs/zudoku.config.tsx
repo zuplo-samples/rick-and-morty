@@ -4,6 +4,14 @@ import PickleExplosion from "./src/PickleExplosion.js";
 
 const config: ZudokuConfig = {
   basePath: "/docs",
+  docs: {
+    files: "pages/**/*.{md,mdx}",
+    publishMarkdown: true,
+    llms: {
+      llmsTxt: true,
+      llmsTxtFull: true,
+    },
+  },
   theme: {
     customCss: `header [style*="background-color"] > .w-full { text-align: center; }`,
     fonts: {
