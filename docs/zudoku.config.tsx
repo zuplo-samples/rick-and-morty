@@ -1,4 +1,5 @@
 import type { ZudokuConfig } from "zudoku";
+import { zuploMonetizationPlugin } from "@zuplo/zudoku-plugin-monetization";
 import LandingPage from "./src/LandingPage.js";
 import PickleExplosion from "./src/PickleExplosion.js";
 
@@ -158,6 +159,9 @@ const config: ZudokuConfig = {
     domain: "zuplo-samples.us.auth0.com",
     audience: "https://api.example.com/",
   },
+  plugins: [
+    zuploMonetizationPlugin(),
+  ],
   slots: {
     "content-after": PickleExplosion,
   },
