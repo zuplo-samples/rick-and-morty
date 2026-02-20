@@ -31,6 +31,19 @@
       },
       "name": "api-key-inbound",
       "policyType": "api-key-inbound"
+    },
+    {
+      "name": "monetization-v3",
+      "policyType": "monetization-inbound",
+      "handler": {
+        "module": "$import(@zuplo/runtime)",
+        "export": "MonetizationInboundPolicy",
+        "options": {
+          "meters": {
+            "api": 1
+          }
+        }
+      }
     }
   ],
   "corsPolicies": []
