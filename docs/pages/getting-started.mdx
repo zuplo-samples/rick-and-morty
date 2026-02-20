@@ -1,0 +1,97 @@
+---
+title: Getting Started
+sidebar_label: Getting Started
+description: Sign up, get your API key, and make your first request to the Rick and Morty API
+---
+
+Get up and running with the Rick and Morty API in a few quick steps. You'll need an API key to authenticate your requests — no portal gun required.
+
+## 1. Create an account
+
+Click the **Sign In** button in the top navigation to create an account via Auth0. You can sign up with your email or use a social login.
+
+## 2. Choose a plan
+
+Once signed in, head to the API Reference and subscribe to a plan:
+
+| Plan | Rate Limit | Best For |
+|------|-----------|----------|
+| **Dimension C-137** (Free) | 100 requests/min | Exploring the API, hobby projects |
+| **Cronenberg** (Paid) | 1,000 requests/min | Apps and integrations |
+| **Pickle Rick** (Paid) | 10,000 requests/min | Production workloads, interdimensional scale |
+
+<Callout type="tip">
+Want to test a paid plan? Use the test card number `4242 4242 4242 4242` with any future expiry date and any CVC.
+</Callout>
+
+## 3. Get your API key
+
+After subscribing, your API key will be available in the Developer Portal. Copy it — you'll include it as a Bearer token in every request.
+
+## 4. Make your first request
+
+Replace `YOUR_API_KEY` with the key from your dashboard:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://rickandmorty.zuplo.io/v1/characters/1"
+```
+
+You should get back Rick Sanchez:
+
+```json
+{
+  "id": 1,
+  "name": "Rick Sanchez",
+  "status": "Alive",
+  "species": "Human",
+  "type": "",
+  "gender": "Male",
+  "origin": {
+    "name": "Earth (C-137)",
+    "url": "https://rickandmorty.zuplo.io/v1/locations/1"
+  },
+  "location": {
+    "name": "Citadel of Ricks",
+    "url": "https://rickandmorty.zuplo.io/v1/locations/3"
+  },
+  "image": "https://rickandmorty.zuplo.io/v1/characters/avatar/1.jpeg"
+}
+```
+
+<Callout type="info">
+All requests require a valid API key sent as a **Bearer token** in the `Authorization` header. Requests without a valid key will return a `401 Unauthorized` response.
+</Callout>
+
+## Base URL
+
+All API endpoints are served from:
+
+```
+https://rickandmorty.zuplo.io/v1
+```
+
+## Pagination
+
+List endpoints return paginated results with 20 items per page. The response includes an `info` object with pagination metadata:
+
+```json
+{
+  "info": {
+    "count": 826,
+    "pages": 42,
+    "next": "https://rickandmorty.zuplo.io/v1/characters?page=2",
+    "prev": null
+  },
+  "results": [...]
+}
+```
+
+Use the `page` query parameter to navigate: `?page=2`, `?page=3`, etc.
+
+## Next steps
+
+- [Characters Guide](/docs/characters) — explore character data and filtering
+- [Locations Guide](/docs/locations) — browse the multiverse
+- [Episodes Guide](/docs/episodes) — find episodes and their casts
+- [API Reference](/docs/api) — full interactive API documentation
