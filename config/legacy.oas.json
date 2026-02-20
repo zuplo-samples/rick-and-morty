@@ -5,7 +5,7 @@
       "title": "Dev Portal Proxy"
     },
     "paths": {
-      "/docs(.*)": {
+      "/docs{(.*)}": {
         "x-zuplo-path": {
           "pathMode": "url-pattern"
         },
