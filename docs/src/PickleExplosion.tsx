@@ -6,16 +6,11 @@ type ExposedComponentProps = {
 };
 
 export default function PickleExplosion({ location }: ExposedComponentProps) {
-  const clickCount = useRef(0);
+  const lastClickTime = useRef(0);
   const [explosions, setExplosions] = useState<
     Array<{ id: number; x: number; y: number }>
   >([]);
   const nextId = useRef(0);
-
-  // Reset click counter on navigation
-  useEffect(() => {
-    clickCount.current = 0;
-  }, [location.pathname]);
 
   // Disable on API reference pages
   const isApiPage = location.pathname.startsWith("/api") || location.pathname.startsWith("/docs/api");
@@ -23,11 +18,32 @@ export default function PickleExplosion({ location }: ExposedComponentProps) {
   useEffect(() => {
     if (isApiPage) return;
 
-    const handleClick = (e: MouseEvent) => {
-      clickCount.current += 1;
+    const DOUBLE_CLICK_WINDOW = 400; // ms
 
-      if (clickCount.current >= 6) {
-        clickCount.current = 0;
+    const CARD_SELECTOR = ".relative.rounded-lg.border.p-6.flex.flex-col";
+    const INTERACTIVE_SELECTOR = "a, button, input, textarea, select, [role='button']";
+
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const isInsideCard = !!target.closest(CARD_SELECTOR);
+
+      if (isInsideCard) {
+        // Inside a card: allow, but skip if clicking an interactive element within it
+        if (target.closest(INTERACTIVE_SELECTOR)) return;
+      } else {
+        // Outside a card: only trigger on page background, not interactive elements
+        if (target.closest(`${INTERACTIVE_SELECTOR}, nav, code, pre`)) return;
+      }
+
+      const now = Date.now();
+      const timeSinceLastClick = now - lastClickTime.current;
+      lastClickTime.current = now;
+
+      if (timeSinceLastClick < DOUBLE_CLICK_WINDOW) {
+        // Prevent text selection from rapid clicking
+        window.getSelection()?.removeAllRanges();
+
+        lastClickTime.current = 0;
         const id = nextId.current++;
         setExplosions((prev) => [...prev, { id, x: e.clientX, y: e.clientY }]);
 
