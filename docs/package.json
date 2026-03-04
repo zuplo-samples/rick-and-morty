@@ -9,10 +9,10 @@
   },
   "dependencies": {
     "@mdx-js/react": "3.0.1",
-    "@zuplo/zudoku-plugin-monetization": "^0.0.15",
+    "@zuplo/zudoku-plugin-monetization": "0.0.19",
     "react": "^19",
     "react-dom": "^19",
-    "zudoku": "0.69.1"
+    "zudoku": "0.70.0"
   },
   "devDependencies": {
     "@types/node": "^22",
