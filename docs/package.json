@@ -11,8 +11,8 @@
     "react": "^19",
     "react-dom": "^19",
     "@mdx-js/react": "3.0.1",
-    "@zuplo/zudoku-plugin-monetization": "^0.0.24",
-    "zudoku": "^0.71.9"
+    "@zuplo/zudoku-plugin-monetization": "^0.0.25",
+    "zudoku": "^0.71.10"
   },
   "devDependencies": {
     "@types/node": "^22",
