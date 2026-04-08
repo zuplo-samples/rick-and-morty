@@ -113,7 +113,7 @@ const config: ZudokuConfig = {
       items: [
         {
           type: "doc",
-          file: "index",
+          file: "welcome",
           label: "Welcome",
           icon: "home",
         },
