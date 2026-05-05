@@ -4,7 +4,7 @@ import LandingPage from "./src/LandingPage.js";
 import PickleExplosion from "./src/PickleExplosion.js";
 
 const config: ZudokuConfig = {
-  basePath: "/docs",
+  basePath: "/",
   docs: {
     files: "pages/**/*.{md,mdx}",
     publishMarkdown: true,
@@ -161,6 +161,9 @@ const config: ZudokuConfig = {
     clientId: "v0cOpST3pX6NIs1VGLVvNjaN3mSBomKk",
     domain: "zuplo-samples.us.auth0.com",
     audience: "https://api.example.com/",
+  },
+  apiKeys: {
+    enabled: true,
   },
   plugins: [
     zuploMonetizationPlugin({

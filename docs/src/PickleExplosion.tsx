@@ -13,7 +13,7 @@ export default function PickleExplosion({ location }: ExposedComponentProps) {
   const nextId = useRef(0);
 
   // Disable on API reference pages
-  const isApiPage = location.pathname.startsWith("/api") || location.pathname.startsWith("/docs/api");
+  const isApiPage = location.pathname.startsWith("/api");
 
   useEffect(() => {
     if (isApiPage) return;
@@ -125,7 +125,7 @@ function PickleBurst({ x, y }: { x: number; y: number }) {
             } as React.CSSProperties
           }
         >
-          <img src="/docs/pickle-rick.png" alt="Pickle Rick" style={{ width: "1em", height: "auto" }} />
+          <img src="/pickle-rick.png" alt="Pickle Rick" style={{ width: "1em", height: "auto" }} />
         </span>
       ))}
     </>
