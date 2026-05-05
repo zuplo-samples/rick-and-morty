@@ -53,14 +53,14 @@
         "type": "string",
         "title": "A Schema",
         "examples": [
-          "https://rickandmorty.zuplo.io/v1/characters/8",
-          "https://rickandmorty.zuplo.io/v1/characters/14"
+          "https://api.rickandmorty.zuplo.io/v1/characters/8",
+          "https://api.rickandmorty.zuplo.io/v1/characters/14"
         ]
       },
       "examples": [
         [
-          "https://rickandmorty.zuplo.io/v1/characters/8",
-          "https://rickandmorty.zuplo.io/v1/characters/14"
+          "https://api.rickandmorty.zuplo.io/v1/characters/8",
+          "https://api.rickandmorty.zuplo.io/v1/characters/14"
         ]
       ]
     },
@@ -69,7 +69,7 @@
       "default": "",
       "title": "The url Schema",
       "examples": [
-        "https://rickandmorty.zuplo.io/locations/3"
+        "https://api.rickandmorty.zuplo.io/v1/locations/3"
       ]
     },
     "created": {
@@ -88,10 +88,10 @@
       "type": "Space station",
       "dimension": "unknown",
       "residents": [
-        "https://rickandmorty.zuplo.io/v1/characters/8",
-        "https://rickandmorty.zuplo.io/v1/characters/14"
+        "https://api.rickandmorty.zuplo.io/v1/characters/8",
+        "https://api.rickandmorty.zuplo.io/v1/characters/14"
       ],
-      "url": "https://rickandmorty.zuplo.io/locations/3",
+      "url": "https://api.rickandmorty.zuplo.io/v1/locations/3",
       "created": "2017-11-10T13:08:13.191Z"
     }
   ]

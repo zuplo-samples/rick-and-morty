@@ -34,7 +34,7 @@ Replace `YOUR_API_KEY` with the key from your dashboard:
 
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/characters/1"
+  "https://api.rickandmorty.zuplo.io/v1/characters/1"
 ```
 
 You should get back Rick Sanchez:
@@ -49,13 +49,13 @@ You should get back Rick Sanchez:
   "gender": "Male",
   "origin": {
     "name": "Earth (C-137)",
-    "url": "https://rickandmorty.zuplo.io/v1/locations/1"
+    "url": "https://api.rickandmorty.zuplo.io/v1/locations/1"
   },
   "location": {
     "name": "Citadel of Ricks",
-    "url": "https://rickandmorty.zuplo.io/v1/locations/3"
+    "url": "https://api.rickandmorty.zuplo.io/v1/locations/3"
   },
-  "image": "https://rickandmorty.zuplo.io/v1/characters/avatar/1.jpeg"
+  "image": "https://api.rickandmorty.zuplo.io/v1/characters/avatar/1.jpeg"
 }
 ```
 
@@ -68,7 +68,7 @@ All requests require a valid API key sent as a **Bearer token** in the `Authoriz
 All API endpoints are served from:
 
 ```
-https://rickandmorty.zuplo.io/v1
+https://api.rickandmorty.zuplo.io/v1
 ```
 
 ## Pagination
@@ -80,7 +80,7 @@ List endpoints return paginated results with 20 items per page. The response inc
   "info": {
     "count": 826,
     "pages": 42,
-    "next": "https://rickandmorty.zuplo.io/v1/characters?page=2",
+    "next": "https://api.rickandmorty.zuplo.io/v1/characters?page=2",
     "prev": null
   },
   "results": [...]

@@ -29,7 +29,7 @@ Each character object contains the following fields:
 
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/characters"
+  "https://api.rickandmorty.zuplo.io/v1/characters"
 ```
 
 Returns a paginated list of all characters (20 per page).
@@ -39,7 +39,7 @@ Returns a paginated list of all characters (20 per page).
 ```bash
 # Get Rick Sanchez
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/characters/1"
+  "https://api.rickandmorty.zuplo.io/v1/characters/1"
 ```
 
 ## Get multiple characters
@@ -49,7 +49,7 @@ Request multiple characters by ID in a single call:
 ```bash
 # Get Rick, Morty, and Summer
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/characters/1,2,3"
+  "https://api.rickandmorty.zuplo.io/v1/characters/1,2,3"
 ```
 
 ## Filtering
@@ -69,19 +69,19 @@ Filter characters using query parameters. All filters are case-insensitive and u
 ```bash
 # Find all alive humans named "Rick"
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/characters?name=rick&status=alive&species=human"
+  "https://api.rickandmorty.zuplo.io/v1/characters?name=rick&status=alive&species=human"
 ```
 
 ```bash
 # Find all dead characters
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/characters?status=dead"
+  "https://api.rickandmorty.zuplo.io/v1/characters?status=dead"
 ```
 
 ```bash
 # Find all Pickle-type characters (you know which one)
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/characters?name=pickle"
+  "https://api.rickandmorty.zuplo.io/v1/characters?name=pickle"
 ```
 
 <Callout type="tip">

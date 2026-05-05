@@ -53,14 +53,14 @@
         "type": "string",
         "title": "A Schema",
         "examples": [
-          "https://rickandmorty.zuplo.io/v1/characters/1",
-          "https://rickandmorty.zuplo.io/v1/characters/2"
+          "https://api.rickandmorty.zuplo.io/v1/characters/1",
+          "https://api.rickandmorty.zuplo.io/v1/characters/2"
         ]
       },
       "examples": [
         [
-          "https://rickandmorty.zuplo.io/v1/characters/1",
-          "https://rickandmorty.zuplo.io/v1/characters/2"
+          "https://api.rickandmorty.zuplo.io/v1/characters/1",
+          "https://api.rickandmorty.zuplo.io/v1/characters/2"
         ]
       ]
     },
@@ -69,7 +69,7 @@
       "default": "",
       "title": "The url Schema",
       "examples": [
-        "https://rickandmorty.zuplo.io/v1/episodes/28"
+        "https://api.rickandmorty.zuplo.io/v1/episodes/28"
       ]
     },
     "created": {
@@ -88,10 +88,10 @@
       "air_date": "September 10, 2017",
       "episode": "S03E07",
       "characters": [
-        "https://rickandmorty.zuplo.io/v1/characters/1",
-        "https://rickandmorty.zuplo.io/v1/characters/2"
+        "https://api.rickandmorty.zuplo.io/v1/characters/1",
+        "https://api.rickandmorty.zuplo.io/v1/characters/2"
       ],
-      "url": "https://rickandmorty.zuplo.io/v1/episodes/28",
+      "url": "https://api.rickandmorty.zuplo.io/v1/episodes/28",
       "created": "2017-11-10T12:56:36.618Z"
     }
   ]
