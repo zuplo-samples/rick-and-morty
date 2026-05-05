@@ -176,6 +176,22 @@ const config: ZudokuConfig = {
   slots: {
     "content-after": PickleExplosion,
   },
+  redirects: [
+    { from: "/docs", to: "/" },
+    { from: "/docs/pricing", to: "/pricing" },
+    { from: "/docs/welcome", to: "/welcome" },
+    { from: "/docs/getting-started", to: "/getting-started" },
+    { from: "/docs/characters", to: "/characters" },
+    { from: "/docs/locations", to: "/locations" },
+    { from: "/docs/episodes", to: "/episodes" },
+    { from: "/docs/api", to: "/api" },
+    { from: "/docs/api/welcome", to: "/welcome" },
+    { from: "/docs/api/getting-started", to: "/getting-started" },
+    { from: "/docs/api/characters", to: "/characters" },
+    { from: "/docs/api/locations", to: "/locations" },
+    { from: "/docs/api/episodes", to: "/episodes" },
+    { from: "/docs/api/~endpoints", to: "/~endpoints" },
+  ],
 };
 
 export default config;
