@@ -2,7 +2,7 @@
 
 ## Developer Portal Example
 
-This is an example API proxied via [Zuplo](zuplo.com) - these docs are generated based on the gateway configuration to demonstate the built in [developer portal](https://zuplo.com/docs/dev-portal) that Zuplo offers.
+This is an example API proxied via [Zuplo](zuplo.com) - these docs are generated based on the gateway configuration to demonstrate the built in [developer portal](https://zuplo.com/docs/dev-portal) that Zuplo offers.
 
 - Full credit to the original and upstream API, which is available at [rickandmortyapi.com](https://rickandmortyapi.com/).
 
