@@ -30,7 +30,7 @@ Some locations exist across multiple dimensions, while others — like the Citad
 
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/locations"
+  "https://api.rickandmorty.zuplo.io/v1/locations"
 ```
 
 Returns a paginated list of all locations (20 per page).
@@ -40,7 +40,7 @@ Returns a paginated list of all locations (20 per page).
 ```bash
 # Get the Citadel of Ricks
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/locations/3"
+  "https://api.rickandmorty.zuplo.io/v1/locations/3"
 ```
 
 ## Get multiple locations
@@ -48,7 +48,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 ```bash
 # Get Earth (C-137), Abadango, and the Citadel
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/locations/1,2,3"
+  "https://api.rickandmorty.zuplo.io/v1/locations/1,2,3"
 ```
 
 ## Filtering
@@ -66,19 +66,19 @@ Filter locations using query parameters:
 ```bash
 # Find all planets
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/locations?type=planet"
+  "https://api.rickandmorty.zuplo.io/v1/locations?type=planet"
 ```
 
 ```bash
 # Find locations in Dimension C-137
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/locations?dimension=dimension+c-137"
+  "https://api.rickandmorty.zuplo.io/v1/locations?dimension=dimension+c-137"
 ```
 
 ```bash
 # Search for a location by name
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/locations?name=citadel"
+  "https://api.rickandmorty.zuplo.io/v1/locations?name=citadel"
 ```
 
 ## Notable locations

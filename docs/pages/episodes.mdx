@@ -34,7 +34,7 @@ This makes it easy to filter by season or find specific episodes programmaticall
 
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/episodes"
+  "https://api.rickandmorty.zuplo.io/v1/episodes"
 ```
 
 Returns a paginated list of all episodes (20 per page).
@@ -44,7 +44,7 @@ Returns a paginated list of all episodes (20 per page).
 ```bash
 # Get "The Ricklantis Mixup" (S03E07)
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/episodes/28"
+  "https://api.rickandmorty.zuplo.io/v1/episodes/28"
 ```
 
 ## Get multiple episodes
@@ -52,7 +52,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 ```bash
 # Get the first three episodes
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/episodes/1,2,3"
+  "https://api.rickandmorty.zuplo.io/v1/episodes/1,2,3"
 ```
 
 ## Filtering
@@ -69,13 +69,13 @@ Filter episodes using query parameters:
 ```bash
 # Find all Season 1 episodes
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/episodes?episode=s01"
+  "https://api.rickandmorty.zuplo.io/v1/episodes?episode=s01"
 ```
 
 ```bash
 # Search for episodes by name
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  "https://rickandmorty.zuplo.io/v1/episodes?name=pickle"
+  "https://api.rickandmorty.zuplo.io/v1/episodes?name=pickle"
 ```
 
 <Callout type="tip">
@@ -103,9 +103,9 @@ Each episode includes a `characters` array with URLs to every character that app
   "name": "The Ricklantis Mixup",
   "episode": "S03E07",
   "characters": [
-    "https://rickandmorty.zuplo.io/v1/characters/1",
-    "https://rickandmorty.zuplo.io/v1/characters/2",
-    "https://rickandmorty.zuplo.io/v1/characters/4",
+    "https://api.rickandmorty.zuplo.io/v1/characters/1",
+    "https://api.rickandmorty.zuplo.io/v1/characters/2",
+    "https://api.rickandmorty.zuplo.io/v1/characters/4",
     "..."
   ]
 }
