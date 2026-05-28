@@ -1,0 +1,64 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "The Rick and Morty MCP Server (via a Zuplo Gateway)",
+    "version": "1.0.0",
+    "description": "Model Context Protocol (MCP) server that exposes the Rick and Morty gateway routes as discoverable tools for AI clients. Connect by configuring your MCP client to `POST https://api.rickandmorty.zuplo.io/v1/mcp` with your API key."
+  },
+  "paths": {
+    "/v1/mcp": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "MCP Server",
+        "description": "Model Context Protocol server endpoint. Exposes the gateway routes as MCP tools to AI clients.",
+        "operationId": "8d4b1f2c-5a6e-4b3d-9e7f-1a2c3b4d5e6f",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [
+              "api-key-inbound",
+              "monetization-v3"
+            ]
+          },
+          "handler": {
+            "export": "mcpServerHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "name": "rick-and-morty",
+              "version": "1.0.0",
+              "debugMode": false,
+              "operations": [
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "a079709e-683f-4580-ab6b-59ebcb3508cb"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "e6df88e1-c847-43ef-b8d3-aa897dcb6f11"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "90fc0a35-405e-4713-8094-91117bbf74dd"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "9fd9bea1-568e-44a7-8be2-e435d5457207"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "6aa12d8c-6132-4161-9e7c-acccbc891bfc"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "98dd71d5-4217-412a-b873-146b4e8b1c60"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
