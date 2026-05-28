@@ -66,7 +66,8 @@ const config: ZudokuConfig = {
         {
           title: "API",
           links: [
-            { label: "API Reference", href: "/api" },
+            { label: "REST", href: "/api" },
+            { label: "GraphQL", href: "/graphql" },
           ],
         },
         {
@@ -146,7 +147,12 @@ const config: ZudokuConfig = {
     {
       type: "link",
       to: "/api",
-      label: "API Reference",
+      label: "REST",
+    },
+    {
+      type: "link",
+      to: "/graphql",
+      label: "GraphQL",
     },
   ],
   apis: [
