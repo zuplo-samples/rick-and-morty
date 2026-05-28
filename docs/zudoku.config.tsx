@@ -155,6 +155,11 @@ const config: ZudokuConfig = {
       input: "../config/routes.oas.json",
       path: "/api",
     },
+    {
+      type: "file",
+      input: "../config/graphql.oas.json",
+      path: "/graphql",
+    },
   ],
   authentication: {
     type: "auth0",
