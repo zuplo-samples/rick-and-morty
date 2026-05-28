@@ -118,14 +118,14 @@
               "type": "string",
               "title": "A Schema",
               "examples": [
-                "https://rickandmorty.zuplo.io/v1/characters/1",
-                "https://rickandmorty.zuplo.io/v1/characters/2"
+                "https://api.rickandmorty.zuplo.io/v1/characters/1",
+                "https://api.rickandmorty.zuplo.io/v1/characters/2"
               ]
             },
             "examples": [
               [
-                "https://rickandmorty.zuplo.io/v1/characters/1",
-                "https://rickandmorty.zuplo.io/v1/characters/2"
+                "https://api.rickandmorty.zuplo.io/v1/characters/1",
+                "https://api.rickandmorty.zuplo.io/v1/characters/2"
               ]
             ]
           },
@@ -134,7 +134,7 @@
             "default": "",
             "title": "The url Schema",
             "examples": [
-              "https://rickandmorty.zuplo.io/v1/locations/1"
+              "https://api.rickandmorty.zuplo.io/v1/locations/1"
             ]
           },
           "created": {
@@ -153,10 +153,10 @@
             "type": "Planet",
             "dimension": "Dimension C-137",
             "residents": [
-              "https://rickandmorty.zuplo.io/v1/characters/1",
-              "https://rickandmorty.zuplo.io/v1/characters/2"
+              "https://api.rickandmorty.zuplo.io/v1/characters/1",
+              "https://api.rickandmorty.zuplo.io/v1/characters/2"
             ],
-            "url": "https://rickandmorty.zuplo.io/v1/locations/1",
+            "url": "https://api.rickandmorty.zuplo.io/v1/locations/1",
             "created": "2017-11-10T12:42:04.162Z"
           }
         ]
@@ -169,10 +169,10 @@
             "type": "Planet",
             "dimension": "Dimension C-137",
             "residents": [
-              "https://rickandmorty.zuplo.io/v1/characters/1",
-              "https://rickandmorty.zuplo.io/v1/characters/2"
+              "https://api.rickandmorty.zuplo.io/v1/characters/1",
+              "https://api.rickandmorty.zuplo.io/v1/characters/2"
             ],
-            "url": "https://rickandmorty.zuplo.io/v1/locations/1",
+            "url": "https://api.rickandmorty.zuplo.io/v1/locations/1",
             "created": "2017-11-10T12:42:04.162Z"
           }
         ]
@@ -194,10 +194,10 @@
           "type": "Planet",
           "dimension": "Dimension C-137",
           "residents": [
-            "https://rickandmorty.zuplo.io/v1/characters/1",
-            "https://rickandmorty.zuplo.io/v1/characters/2"
+            "https://api.rickandmorty.zuplo.io/v1/characters/1",
+            "https://api.rickandmorty.zuplo.io/v1/characters/2"
           ],
-          "url": "https://rickandmorty.zuplo.io/v1/locations/1",
+          "url": "https://api.rickandmorty.zuplo.io/v1/locations/1",
           "created": "2017-11-10T12:42:04.162Z"
         }
       ]
