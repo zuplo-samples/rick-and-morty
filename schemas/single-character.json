@@ -88,14 +88,14 @@
           "default": "",
           "title": "The url Schema",
           "examples": [
-            "https://rickandmorty.zuplo.io/v1/location/1"
+            "https://api.rickandmorty.zuplo.io/v1/location/1"
           ]
         }
       },
       "examples": [
         {
           "name": "Earth",
-          "url": "https://rickandmorty.zuplo.io/v1/location/1"
+          "url": "https://api.rickandmorty.zuplo.io/v1/location/1"
         }
       ]
     },
@@ -121,14 +121,14 @@
           "default": "",
           "title": "The url Schema",
           "examples": [
-            "https://rickandmorty.zuplo.io/v1/location/20"
+            "https://api.rickandmorty.zuplo.io/v1/location/20"
           ]
         }
       },
       "examples": [
         {
           "name": "Earth",
-          "url": "https://rickandmorty.zuplo.io/v1/location/20"
+          "url": "https://api.rickandmorty.zuplo.io/v1/location/20"
         }
       ]
     },
@@ -137,7 +137,7 @@
       "default": "",
       "title": "The image Schema",
       "examples": [
-        "https://rickandmorty.zuplo.io/v1/characters/avatar/2.jpeg"
+        "https://api.rickandmorty.zuplo.io/v1/characters/avatar/2.jpeg"
       ]
     },
     "episode": {
@@ -148,14 +148,14 @@
         "type": "string",
         "title": "A Schema",
         "examples": [
-          "https://rickandmorty.zuplo.io/v1/episodes/1",
-          "https://rickandmorty.zuplo.io/v1/episodes/2"
+          "https://api.rickandmorty.zuplo.io/v1/episodes/1",
+          "https://api.rickandmorty.zuplo.io/v1/episodes/2"
         ]
       },
       "examples": [
         [
-          "https://rickandmorty.zuplo.io/v1/episodes/1",
-          "https://rickandmorty.zuplo.io/v1/episodes/2"
+          "https://api.rickandmorty.zuplo.io/v1/episodes/1",
+          "https://api.rickandmorty.zuplo.io/v1/episodes/2"
         ]
       ]
     },
@@ -164,7 +164,7 @@
       "default": "",
       "title": "The url Schema",
       "examples": [
-        "https://rickandmorty.zuplo.io/v1/characters/2"
+        "https://api.rickandmorty.zuplo.io/v1/characters/2"
       ]
     },
     "created": {
@@ -186,18 +186,18 @@
       "gender": "Male",
       "origin": {
         "name": "Earth",
-        "url": "https://rickandmorty.zuplo.io/v1/locations/1"
+        "url": "https://api.rickandmorty.zuplo.io/v1/locations/1"
       },
       "location": {
         "name": "Earth",
-        "url": "https://rickandmorty.zuplo.io/v1/locations/20"
+        "url": "https://api.rickandmorty.zuplo.io/v1/locations/20"
       },
-      "image": "https://rickandmorty.zuplo.io/v1/characters/avatar/2.jpeg",
+      "image": "https://api.rickandmorty.zuplo.io/v1/characters/avatar/2.jpeg",
       "episode": [
-        "https://rickandmorty.zuplo.io/v1/episodes/1",
-        "https://rickandmorty.zuplo.io/v1/episodes/2"
+        "https://api.rickandmorty.zuplo.io/v1/episodes/1",
+        "https://api.rickandmorty.zuplo.io/v1/episodes/2"
       ],
-      "url": "https://rickandmorty.zuplo.io/v1/characters/2",
+      "url": "https://api.rickandmorty.zuplo.io/v1/characters/2",
       "created": "2017-11-04T18:50:21.651Z"
     }
   ]

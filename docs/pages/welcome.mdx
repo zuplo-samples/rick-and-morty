@@ -1,0 +1,58 @@
+---
+title: Welcome
+sidebar_label: Welcome
+description: REST API for Rick and Morty characters, locations, and episodes — powered by Zuplo
+---
+
+Welcome to the **Rick and Morty API** documentation. This RESTful API gives you access to hundreds of characters, locations, and episodes from the Rick and Morty universe. Built on [Zuplo](https://zuplo.com), it features API key authentication, rate limiting, and full OpenAPI documentation.
+
+<Callout type="tip">
+New here? Head to the [Getting Started](/getting-started) guide to get your API key and make your first request in under 2 minutes.
+</Callout>
+
+## What's in the multiverse?
+
+### 🧬 Characters
+
+Access data on **826+ characters** — from Rick Sanchez and Morty Smith to Pickle Rick and Abradolf Lincler. Filter by name, status, species, gender, and more.
+
+[Explore Characters →](/characters)
+
+### 🌍 Locations & Dimensions
+
+Browse locations across the multiverse: Earth (Dimension C-137), the Citadel of Ricks, Anatomy Park, Blips and Chitz, and beyond. Every location includes its dimension and resident characters.
+
+[Explore Locations →](/locations)
+
+### 📺 Episodes
+
+All episodes from every season, with air dates, episode codes, and the characters that appear in each one.
+
+[Explore Episodes →](/episodes)
+
+## Quick example
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://api.rickandmorty.zuplo.io/v1/characters/1"
+```
+
+```json
+{
+  "id": 1,
+  "name": "Rick Sanchez",
+  "status": "Alive",
+  "species": "Human",
+  "gender": "Male",
+  "origin": {
+    "name": "Earth (C-137)",
+    "url": "https://api.rickandmorty.zuplo.io/v1/locations/1"
+  },
+  "image": "https://api.rickandmorty.zuplo.io/v1/characters/avatar/1.jpeg"
+}
+```
+
+## Ready to get schwifty?
+
+- [Getting Started](/getting-started) — sign up and make your first request
+- [API Reference](/api) — full interactive reference with try-it-out

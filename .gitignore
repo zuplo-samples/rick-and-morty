@@ -5,5 +5,8 @@ node_modules/
 .env
 .husky/_
 
+# Test output
+docs/test-results/
+
 # OS Stuff
 .DS_Store

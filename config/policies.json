@@ -9,7 +9,7 @@
         "options": {
           "mode": "regexp",
           "match": "https://rickandmortyapi.com/api/(episode|location|character)",
-          "replaceWith": "https://rickandmorty.zuplo.io/v1/$1s"
+          "replaceWith": "https://api.rickandmorty.zuplo.io/v1/$1s"
         }
       }
     },
@@ -33,23 +33,17 @@
       "policyType": "api-key-inbound"
     },
     {
+      "name": "monetization-v3",
+      "policyType": "monetization-inbound",
       "handler": {
-        "export": "MonetizationInboundPolicy",
         "module": "$import(@zuplo/runtime)",
+        "export": "MonetizationInboundPolicy",
         "options": {
-          "allowRequestsOverQuota": false,
-          "allowedSubscriptionStatuses": [
-            "active",
-            "incomplete"
-          ],
-          "meterOnStatusCodes": "200-399",
           "meters": {
-            "requests": 1
+            "api": 1
           }
         }
-      },
-      "name": "monetization-inbound",
-      "policyType": "monetization-inbound"
+      }
     }
   ],
   "corsPolicies": []

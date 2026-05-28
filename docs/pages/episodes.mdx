@@ -1,0 +1,118 @@
+---
+title: Episodes
+sidebar_label: Episodes
+description: Guide to the Episodes endpoint — data model, episode codes, filtering, and examples
+---
+
+The Episodes endpoint provides data on every episode of Rick and Morty — across all seasons. Each episode includes its air date, episode code, and a list of every character that appears in it.
+
+## Data model
+
+Each episode object contains the following fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | integer | Unique identifier |
+| `name` | string | Episode title |
+| `air_date` | string | Original air date (e.g., `December 2, 2013`) |
+| `episode` | string | Episode code in `SxxExx` format (e.g., `S01E01`) |
+| `characters` | array | List of character URLs that appear in this episode |
+| `url` | string | URL to the episode's own endpoint |
+| `created` | string | ISO 8601 timestamp when the record was created |
+
+## Episode codes
+
+Episodes follow the standard `SxxExx` format:
+
+- `S01E01` — Season 1, Episode 1 ("Pilot")
+- `S03E07` — Season 3, Episode 7 ("The Ricklantis Mixup")
+- `S05E10` — Season 5, Episode 10 ("Rickmurai Jack")
+
+This makes it easy to filter by season or find specific episodes programmatically.
+
+## Get all episodes
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://api.rickandmorty.zuplo.io/v1/episodes"
+```
+
+Returns a paginated list of all episodes (20 per page).
+
+## Get a single episode
+
+```bash
+# Get "The Ricklantis Mixup" (S03E07)
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://api.rickandmorty.zuplo.io/v1/episodes/28"
+```
+
+## Get multiple episodes
+
+```bash
+# Get the first three episodes
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://api.rickandmorty.zuplo.io/v1/episodes/1,2,3"
+```
+
+## Filtering
+
+Filter episodes using query parameters:
+
+| Parameter | Type | Example Values |
+|-----------|------|---------------|
+| `name` | string | `pilot`, `ricklantis`, `pickle rick` |
+| `episode` | string | `s01e01`, `s03`, `e07` |
+
+### Filter examples
+
+```bash
+# Find all Season 1 episodes
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://api.rickandmorty.zuplo.io/v1/episodes?episode=s01"
+```
+
+```bash
+# Search for episodes by name
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  "https://api.rickandmorty.zuplo.io/v1/episodes?name=pickle"
+```
+
+<Callout type="tip">
+The `episode` filter supports partial matching — use `s01` to get all of Season 1, or `e01` to get the first episode of every season.
+</Callout>
+
+## Notable episodes
+
+| ID | Code | Name | Air Date |
+|----|------|------|----------|
+| 1 | S01E01 | Pilot | December 2, 2013 |
+| 6 | S01E06 | Rick Potion #9 | January 27, 2014 |
+| 22 | S03E03 | Pickle Rick | August 6, 2017 |
+| 28 | S03E07 | The Ricklantis Mixup | September 10, 2017 |
+| 31 | S03E10 | The Rickchurian Mortydate | October 1, 2017 |
+| 41 | S04E10 | Star Mort Rickturn of the Jerri | May 31, 2020 |
+
+## Working with character lists
+
+Each episode includes a `characters` array with URLs to every character that appears in it. This is useful for building episode guides or character appearance trackers:
+
+```json
+{
+  "id": 28,
+  "name": "The Ricklantis Mixup",
+  "episode": "S03E07",
+  "characters": [
+    "https://api.rickandmorty.zuplo.io/v1/characters/1",
+    "https://api.rickandmorty.zuplo.io/v1/characters/2",
+    "https://api.rickandmorty.zuplo.io/v1/characters/4",
+    "..."
+  ]
+}
+```
+
+## Next steps
+
+- [Characters Guide](/characters) — look up the characters from any episode
+- [Locations Guide](/locations) — explore where episodes take place
+- [API Reference](/api) — try the Episodes endpoints interactively
