@@ -14,7 +14,14 @@ const config: ZudokuConfig = {
     },
   },
   theme: {
-    customCss: `header [style*="background-color"] > .w-full { text-align: center; }`,
+    customCss: `
+      header [style*="background-color"] > .w-full { text-align: center; }
+      /* Zudoku applies bg-accent to active/hover nav items but not text-accent-foreground,
+         which makes labels unreadable on the bright cyan accent in this theme. */
+      [aria-current="page"],
+      [aria-current="page"]:hover,
+      .hover\\:bg-accent:hover { color: var(--accent-foreground); }
+    `,
     fonts: {
       sans: "Outfit",
       mono: "Fira Code",
