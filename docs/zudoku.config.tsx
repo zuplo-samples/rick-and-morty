@@ -154,6 +154,11 @@ const config: ZudokuConfig = {
       to: "/graphql",
       label: "GraphQL",
     },
+    {
+      type: "link",
+      to: "/mcp",
+      label: "MCP",
+    },
   ],
   apis: [
     {
@@ -165,6 +170,11 @@ const config: ZudokuConfig = {
       type: "file",
       input: "../config/graphql.oas.json",
       path: "/graphql",
+    },
+    {
+      type: "file",
+      input: "../config/mcp.oas.json",
+      path: "/mcp",
     },
   ],
   authentication: {

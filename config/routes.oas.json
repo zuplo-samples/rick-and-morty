@@ -13,7 +13,7 @@
       "get": {
         "summary": "Get all characters ",
         "description": "You can access the list of characters by using the `/characters` endpoint. Pagination is supported via the `?page=2` querystring. You can also filter the results using the `name`, `status`, `species`, `type` and `gender` query parameters.",
-        "operationId": "a079709e-683f-4580-ab6b-59ebcb3508cb",
+        "operationId": "get-characters",
         "parameters": [
           {
             "name": "page",
@@ -120,7 +120,7 @@
       "get": {
         "summary": "Get a characters by ID(s)",
         "description": "You can get a single character by ID, or multiple by adding an array of ids as parameter: `/characters/[1,2,3]` or `/characters/1,2,3`",
-        "operationId": "e6df88e1-c847-43ef-b8d3-aa897dcb6f11",
+        "operationId": "get-characters-by-id",
         "parameters": [
           {
             "name": "characterId",
@@ -166,6 +166,14 @@
               "rewritePattern": "https://rickandmortyapi.com/api/character/${params.characterId}"
             }
           }
+        },
+        "additionalOperationContext": {
+          "oasFilePath": "/config/routes.oas.json",
+          "method": "get",
+          "path": "/v1/characters/:characterId",
+          "pathZuploConfig": {
+            "pathMode": "url-pattern"
+          }
         }
       }
     },
@@ -176,7 +184,7 @@
       "get": {
         "summary": "Get all locations",
         "description": "You can access the list of locations by using the `/locations` endpoint.",
-        "operationId": "90fc0a35-405e-4713-8094-91117bbf74dd",
+        "operationId": "get-locations",
         "parameters": [
           {
             "name": "page",
@@ -249,6 +257,14 @@
               "rewritePattern": "https://rickandmortyapi.com/api/location${search}"
             }
           }
+        },
+        "additionalOperationContext": {
+          "oasFilePath": "/config/routes.oas.json",
+          "method": "get",
+          "path": "/v1/locations",
+          "pathZuploConfig": {
+            "pathMode": "url-pattern"
+          }
         }
       }
     },
@@ -259,7 +275,7 @@
       "get": {
         "summary": "Get locations by ID(s)",
         "description": "You can get a single location by ID, or multiple by adding an array of ids as parameter: `/locations/[1,2,3]` or `/locations/1,2,3`",
-        "operationId": "9fd9bea1-568e-44a7-8be2-e435d5457207",
+        "operationId": "get-locations-by-id",
         "parameters": [
           {
             "name": "locationId",
@@ -304,6 +320,14 @@
               "rewritePattern": "https://rickandmortyapi.com/api/location/${params.locationId}"
             }
           }
+        },
+        "additionalOperationContext": {
+          "oasFilePath": "/config/routes.oas.json",
+          "method": "get",
+          "path": "/v1/locations/:locationId",
+          "pathZuploConfig": {
+            "pathMode": "url-pattern"
+          }
         }
       }
     },
@@ -314,7 +338,7 @@
       "get": {
         "summary": "Get all episodes",
         "description": "You can access the list of episodes by using the `/episodes` endpoint.",
-        "operationId": "6aa12d8c-6132-4161-9e7c-acccbc891bfc",
+        "operationId": "get-episodes",
         "parameters": [
           {
             "name": "page",
@@ -369,6 +393,14 @@
               "rewritePattern": "https://rickandmortyapi.com/api/episode${search}"
             }
           }
+        },
+        "additionalOperationContext": {
+          "oasFilePath": "/config/routes.oas.json",
+          "method": "get",
+          "path": "/v1/episodes/",
+          "pathZuploConfig": {
+            "pathMode": "url-pattern"
+          }
         }
       }
     },
@@ -379,7 +411,7 @@
       "get": {
         "summary": "Get episodes by ID(s)",
         "description": "You can get a single episode by ID, or multiple by adding an array of ids as parameter: `/episodes/[1,2,3]` or `/episodes/1,2,3`",
-        "operationId": "98dd71d5-4217-412a-b873-146b4e8b1c60",
+        "operationId": "get-all-episodes-by-id",
         "parameters": [
           {
             "name": "episodeId",
@@ -424,6 +456,14 @@
               "rewritePattern": "https://rickandmortyapi.com/api/episode/${params.episodeId}"
             }
           }
+        },
+        "additionalOperationContext": {
+          "oasFilePath": "/config/routes.oas.json",
+          "method": "get",
+          "path": "/v1/episodes/:episodeId",
+          "pathZuploConfig": {
+            "pathMode": "url-pattern"
+          }
         }
       }
     },
@@ -434,7 +474,7 @@
       "get": {
         "x-internal": true,
         "summary": "Get Avatar",
-        "operationId": "93377ad1-55e3-4610-88bd-651a163c3395",
+        "operationId": "get-avatar-by-image-id",
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
           "policies": {
@@ -450,6 +490,15 @@
             "options": {
               "rewritePattern": "https://rickandmortyapi.com/api/character/avatar/${params.imageId}"
             }
+          }
+        },
+        "description": "",
+        "additionalOperationContext": {
+          "oasFilePath": "/config/routes.oas.json",
+          "method": "get",
+          "path": "/v1/characters/avatar/:imageId",
+          "pathZuploConfig": {
+            "pathMode": "url-pattern"
           }
         }
       }
@@ -471,7 +520,12 @@
             "inbound": []
           }
         },
-        "operationId": "f45b4333-54c1-450d-87f1-b02a6b508ae3"
+        "operationId": "download-openapi-file",
+        "additionalOperationContext": {
+          "oasFilePath": "/config/routes.oas.json",
+          "method": "get",
+          "path": "/openapi.json"
+        }
       }
     }
   }
