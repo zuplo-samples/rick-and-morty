@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "The Rick and Morty MCP Server  (via a Zuplo Gateway)",
+    "version": "1.0.0",
+    "description": "MCP Server dynamically generated from the OpenAPI file by the Zuplo gateway. You need to sign up for an API key to use - you can 'buy' one by entering the fake CC 4242 4242 4242 4242 and a valid expiry date etc. Go try it out!"
+  },
+  "paths": {
+    "/mcp": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "MCP Server",
+        "description": "Default MCP Server",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "mcpServerHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "operations": [
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "get-characters"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "get-characters-by-id"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "get-locations"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "get-locations-by-id"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "get-episodes"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "get-all-episodes-by-id"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "get-avatar-by-image-id"
+                },
+                {
+                  "file": "./config/routes.oas.json",
+                  "id": "download-openapi-file"
+                }
+              ]
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "mcp-e4019340"
+      }
+    }
+  }
+}
