@@ -6,7 +6,7 @@
     "description": "MCP Server dynamically generated from the OpenAPI file by the Zuplo gateway. You need to sign up for an API key to use - you can 'buy' one by entering the fake CC 4242 4242 4242 4242 and a valid expiry date etc. Go try it out!"
   },
   "paths": {
-    "/mcp": {
+    "/v1/mcp": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
