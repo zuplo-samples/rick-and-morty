@@ -3,16 +3,16 @@
   "info": {
     "title": "The Rick and Morty GraphQL API (via a Zuplo Gateway)",
     "version": "1.0.0",
-    "description": "GraphQL endpoint proxied from the original API at [rickandmortyapi.com/graphql](https://rickandmortyapi.com/documentation/#graphql). \n\n **To use this API: 1) visit the pricing page from the top menu , 2) subscribe to any plan using a [fake credit card](https://docs.stripe.com/testing#cards) like `4242 4242 4242 4242` and any expire date and CVC and 3) copy your API key and start using the API.**"
+    "description": "GraphQL endpoint proxied from the original API at [rickandmortyapi.com/graphql](https://rickandmortyapi.com/documentation/#graphql). The free `/v1/graphql` endpoint is open and requires no API key. The premium `/v1/premium-graphql` endpoint requires an API key and an active subscription. \n\n **To use the premium API: 1) visit the pricing page from the top menu , 2) subscribe to any plan using a [fake credit card](https://docs.stripe.com/testing#cards) like `4242 4242 4242 4242` and any expire date and CVC and 3) copy your API key and start using the API.**"
   },
   "paths": {
-    "/v1/graphql": {
+    "/v1/premium-graphql": {
       "x-zuplo-path": {
         "pathMode": "url-pattern"
       },
       "post": {
-        "summary": "GraphQL endpoint",
-        "description": "GraphQL endpoint proxied from `https://rickandmortyapi.com/graphql`. Send a `POST` request with a JSON body containing your `query`, optional `variables`, and optional `operationName`. See the [original GraphQL docs](https://rickandmortyapi.com/documentation/#graphql) for the schema.",
+        "summary": "GraphQL endpoint (Premium)",
+        "description": "The premium version of the GraphQL API, proxied from `https://rickandmortyapi.com/graphql`. Requires an API key and an active subscription — requests are metered against your plan. Send a `POST` request with a JSON body containing your `query`, optional `variables`, and optional `operationName`. See the [original GraphQL docs](https://rickandmortyapi.com/documentation/#graphql) for the schema.",
         "operationId": "b18d2c4e-3a1f-4c7e-9d2b-7a3c5e9f1a2d",
         "x-graphql": true,
         "requestBody": {
@@ -80,6 +80,91 @@
               "api-key-inbound",
               "monetization-v3"
             ],
+            "outbound": [
+              "replace-urls"
+            ]
+          },
+          "handler": {
+            "export": "urlRewriteHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "rewritePattern": "https://rickandmortyapi.com/graphql"
+            }
+          }
+        }
+      }
+    },
+    "/v1/graphql": {
+      "x-zuplo-path": {
+        "pathMode": "url-pattern"
+      },
+      "post": {
+        "summary": "GraphQL endpoint (Free)",
+        "description": "The free, open version of the GraphQL API, proxied from `https://rickandmortyapi.com/graphql`. No API key or subscription required. Send a `POST` request with a JSON body containing your `query`, optional `variables`, and optional `operationName`. See the [original GraphQL docs](https://rickandmortyapi.com/documentation/#graphql) for the schema.",
+        "operationId": "1aa7ecdb-a4c0-4d9a-bcae-42ecd21dddba",
+        "x-graphql": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "query"
+                ],
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "The GraphQL query or mutation string",
+                    "example": "{ characters(page: 1) { results { id name status species } } }"
+                  },
+                  "variables": {
+                    "type": "object",
+                    "description": "Variables referenced by the query",
+                    "additionalProperties": true
+                  },
+                  "operationName": {
+                    "type": "string",
+                    "description": "Name of the operation to execute if the query contains multiple"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "GraphQL response containing `data` and/or `errors`",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "nullable": true,
+                      "additionalProperties": true
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "GraphQL"
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "policies": {
+            "inbound": [],
             "outbound": [
               "replace-urls"
             ]
